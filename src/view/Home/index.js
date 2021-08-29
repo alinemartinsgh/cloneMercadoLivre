@@ -1,12 +1,22 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 
-import { Container } from './styles'
+import { Container, Image } from './styles';
+import logo from "../../assets/logo.png"
+import Button from '../../components/Button';
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <Container>
-      <Text>Home</Text>
+      <Image source={logo} />
+      <Button
+        text="Entrar"
+        press={() => navigation.navigate('Login')}
+        bgColor='outlined'
+      />
+      <Button
+        text="criar conta"
+        press={() => navigation.navigate('Signup')}
+      />
     </Container>
   );
 }
